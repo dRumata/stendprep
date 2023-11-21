@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Установка ПО deb"
-sudo apt install neovim git tmux mc ufw curl ripgrep lua5.4 gcc -y
+sudo apt install git tmux mc ufw curl ripgrep lua5.4 gcc -y
 sudo nmcli con mod "Wired connection 1" con-name labnet
 
 tee /home/sa/.tmux.conf << _EOF_
