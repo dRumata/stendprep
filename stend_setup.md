@@ -21,13 +21,13 @@ https://www.debian.org/download
 - Разбиение диска: можно все на один раздел
 
 2. На оба сервера установить git
-3. Склонировать скрипты развертывания: git clone https://github.com/dRumata/stendprep/
+3. Склонировать скрипты развертывания: `git clone https://github.com/dRumata/stendprep/`
 
-4. На Debian выполнить скрипт stendprep/debprep.sh
+4. На Debian выполнить скрипт `stendprep/debprep.sh`
 
-5. На Almalinux выполнить скрипт stendprep/almaprep.sh
+5. На Almalinux выполнить скрипт `stendprep/almaprep.sh`
 
-6. Настройте локальный сайт с заданиями для слушателя (необязательно, можно использовать версию на https://github.com/drumata/MT_LPIC-102/):
+6. Настройте локальный сайт с заданиями для слушателя на ВМ Debian (необязательно, можно использовать версию на https://github.com/drumata/MT_LPIC-102/):
 
 6.1. Перейдите на страницу http://s2-deb.mt.local
 
