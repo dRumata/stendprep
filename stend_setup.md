@@ -29,6 +29,7 @@ https://www.debian.org/download
 
 6. Настройте локальный сайт с заданиями для слушателя на ВМ Debian (необязательно, можно использовать версию на https://github.com/drumata/MT_LPIC-102/):
 
+6.0. Запустите на debian скрипт `stendprep/labglocal.sh`
 6.1. Перейдите на страницу http://s2-deb.mt.local
 
   - домен сервера: s2-deb.mt.local
