@@ -31,6 +31,9 @@ services:
 _EOF_
 
 cd /opt/forgejo/
-sudo podman-compose up&
+sudo podman-compose up -d
+echo "Сборник задач доступен на http://localhost/sa/"
+echo "Если установка производилась только на тренерский сервер,"
+echo "то сообщите адрес сервера своим слушателям."
 
 
