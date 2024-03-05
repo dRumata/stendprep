@@ -1,8 +1,12 @@
 #!/bin/bash
 echo "Установка ПО"
 sudo dnf install epel-release
-
 sudo dnf install neovim git tmux mc curl ripgrep gcc -y
+
+echo "До"
+sudo useradd testnopass
+
+sudo systemctl enable --now cockpit.socket
 
 tee /home/sa/.tmux.conf << _EOF_
 set -g mouse on
