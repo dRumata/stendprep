@@ -23,7 +23,7 @@ wget https://github.com/neovim/neovim-releases/releases/download/nightly/nvim-li
 sudo apt install ./nvim-linux64.deb
 wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/MartianMono.zip && unzip MartianMono.zip -d ~/.local/share/fonts/
 cd
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+git clone https://github.com/NvChad/starter ~/.config/nvim
 sudo cp ~/.config/nvim /root/.config/nvim -R
 echo "alias vim=nvim"|tee -a ~/.bashrc
 echo "--------------------------------------"
