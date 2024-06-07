@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Установка локального сборника заданий"
 
-sudo apt install docker podman-compose podman -y
+sudo dnf install docker podman-compose podman -y
 
 sudo mkdir /opt/forgejo
 sudo tee /opt/forgejo/compose.yml << _EOF_
@@ -13,11 +13,16 @@ networks:
 
 services:
   server:
-    image: codeberg.org/forgejo/forgejo:1.20
+    image: codeberg.org/forgejo/forgejo:7
     container_name: forgejo
     environment:
       - USER_UID=1000
       - USER_GID=1000
+      - FORGEJO__database__DB_TYPE=mysql
+      - FORGEJO__database__HOST=db:3306
+      - FORGEJO__database__NAME=forgejo
+      - FORGEJO__database__USER=forgejo
+      - FORGEJO__database__PASSWD=forgejo
     restart: always
     networks:
       - forgejo
@@ -28,6 +33,22 @@ services:
     ports:
       - '80:3000'
       - '222:22'
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=forgejo
+      - MYSQL_USER=forgejo
+      - MYSQL_PASSWORD=forgejo
+      - MYSQL_DATABASE=forgejo
+    networks:
+      - forgejo
+    volumes:
+      - ./mysql:/var/lib/mysql
+
 _EOF_
 
 cd /opt/forgejo/
